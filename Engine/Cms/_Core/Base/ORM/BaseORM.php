@@ -272,11 +272,11 @@ abstract class BaseORM implements \JsonSerializable
                             }
                         }
                     }
-                } elseif ($columnJson->widget == 'Date picker') {
+                } elseif ($columnJson->widget == 'Date picker' && $this->$field) {
 
                     return date('d M y', strtotime($this->$field));
 
-                } elseif ($columnJson->widget == 'Date time picker') {
+                } elseif ($columnJson->widget == 'Date time picker' && $this->$field) {
 
                     return date('d M y H:i', strtotime($this->$field));
 
